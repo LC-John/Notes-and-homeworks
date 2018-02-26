@@ -1,0 +1,47 @@
+PKU体系实习LAB3.1
+
+姓名：张煌昭
+学号：1400017707
+院系：元培学院
+邮箱：zhang_hz@pku.edu.cn
+
+本次LAB3.1，仅与小组内成员讨论思路，其余所有工作均由本人独立完成。
+
+本目录下包括：
+	code源代码及可执行文件目录
+	report实验报告及数据目录
+	README文档
+
+Cache-sim运行方法：
+	进入code目录，解压cache.zip压缩包
+
+	启动qtcreator，载入cache/cache-sim/cache-sim.pro项目，编译后于build-cache-sim-Desktop_Qt_5_9_2_GCC_64bit-Debug目录下运行；
+	或直接进入cache\build-cache-sim-Desktop_Qt_5_9_2_GCC_64bit-Debug目录运行，其中已有编译好的可执行文件。
+	命令行输入"./cache"启动并运行程序。
+
+	命令行参数：
+		-trace=，指定trace文件路径，默认为当前目录下1.trace
+		-size=，指定Cache size，单位为Byte，默认为32KB
+		-setnum=，指定Set num，默认为64
+		-associativity=，指定Set associativity，默认为8路组相联
+		-writeup=，指定写回方式，'b'或'B'为Write back，'t'或'T'为Write through，默认为Write back
+		-writemiss=，指定Write miss的处理方式，'a'或'A'为Write alloc，'n'或'N'为Write non-alloc，默认为Write alloc
+
+	示例：
+		"./cache-sim -trace=./1.trace -size=32768 -setnum=64 -associativity=8 -writeup=b -writemiss=n"
+
+联调模拟器运行方法：
+	进入code目录，解压riscv-sim-modified.zip压缩包
+
+	启动qtcreator，载入riscv-sim-modified/simulator/simulator.pro项目，编译后于build-simulator-Desktop_Qt_5_9_2_GCC_64bit-Debug目录下运行；
+	或直接进入riscv-sim-modified\build-simulator-Desktop_Qt_5_9_2_GCC_64bit-Debug目录运行，其中已有编译好的可执行文件。
+	命令行输入"./simulator"启动并运行程序。
+
+	命令行参数：
+		待模拟RISC-V程序，第一号参数必须为待模拟程序的路径
+		-v，verbose模式，显示部分信息，第二号参数起可用
+		-d，debug模式，显示全部信息，第二号参数起可用
+		变量名称，需要打印内存的变量的名称，第二号参数起可用
+
+	示例：
+		"./simulator ./1 result"
